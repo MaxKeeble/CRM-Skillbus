@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skillbus - CRM</title>
+
+  <link rel="stylesheet" href="css/normolize.css">
+
+  <!-- Селект -->
+  <link rel="stylesheet" href="css/choices.min.css">
+  <script defer src="scripts/choices.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="scripts/script.js"></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header__container">
+
+      <div class="logo">
+        <a class="logo__link" href="#">
+          <img class="logo__img" src="img/logo.svg" alt="Skillbus">
+        </a>
+      </div>
+
+      <div class="search-input-wrapper">
+        <input class="search-input" type="text" name="search" id="search" placeholder="Введите запрос">
+        <svg class="loading-image loading-image_search" width="100" height="100" viewbox="0 0 100 100" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_121_2401)">
+            <path
+              d="M14.0002 50.0005C14.0002 69.8825 30.1182 86.0005 50.0002 86.0005C69.8822 86.0005 86.0002 69.8825 86.0002 50.0005C86.0002 30.1185 69.8823 14.0005 50.0003 14.0005C45.3513 14.0005 40.9082 14.8815 36.8282 16.4865"
+              stroke="#9873FF" stroke-width="8" stroke-miterlimit="10" stroke-linecap="round" />
+          </g>
+        </svg>
+        <ul class="search-result">
+        </ul>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="clients">
+      <div class="container clients__container">
+
+        <h1 class="clients__heading">Клиенты</h1>
+
+        <div class="column-headings ch">
+          <div class="column-heading ch__id col-1">
+            <button class="ch__btn" id="sort-id">ID
+              <svg class="ch__image" width="12" height="12" viewbox="0 0 12 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <title>Сортировка колонки</title>
+                <path d="M10 6L9.295 5.295L6.5 8.085L6.5 2H5.5L5.5 8.085L2.71 5.29L2 6L6 10L10 6Z" fill="#9873FF" />
+              </svg>
+            </button>
+          </div>
+          <div class="column-heading ch__name col-2">
+            <button class="ch__btn" id="sort-name">Фамилия Имя Отчество
+              <svg class="ch__image" width="12" height="12" viewbox="0 0 12 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <title>Сортировка колонки</title>
+                <path d="M10 6L9.295 5.295L6.5 8.085L6.5 2H5.5L5.5 8.085L2.71 5.29L2 6L6 10L10 6Z" fill="#9873FF" />
+              </svg>
+              <span class="ch__span ch__span_az">А-Я</span>
+              <span class="ch__span ch__span_za">Я-А</span>
+            </button>
+          </div>
+          <div class="column-heading ch__creation col-3">
+            <button class="ch__btn" id="sort-creation">Дата&#160;и&#160;время создания
+              <svg class="ch__image" width="12" height="12" viewbox="0 0 12 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <title>Сортировка колонки</title>
+                <path d="M10 6L9.295 5.295L6.5 8.085L6.5 2H5.5L5.5 8.085L2.71 5.29L2 6L6 10L10 6Z" fill="#9873FF" />
+              </svg>
+            </button>
+          </div>
+          <div class="column-heading ch__last-changes col-4">
+            <button class="ch__btn" id="sort-change">Последние изменения
+              <svg class="ch__image" width="12" height="12" viewbox="0 0 12 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <title>Сортировка колонки</title>
+                <path d="M10 6L9.295 5.295L6.5 8.085L6.5 2H5.5L5.5 8.085L2.71 5.29L2 6L6 10L10 6Z" fill="#9873FF" />
+              </svg>
+            </button>
+          </div>
+          <div class="column-heading ch__contacts col-5">Контакты</div>
+          <div class="column-heading ch__actions col-6">Действия</div>
+        </div>
+
+        <ul class="clients__table table">
+        </ul>
+
+      </div>
+    </div>
+
+    <button class="clients__btn add-client-btn">
+      <svg class="add-client-btn__image icon" width="23" height="16" viewbox="0 0 23 16" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <title>Добавить клиента</title>
+        <path
+          d="M14.5 8C16.71 8 18.5 6.21 18.5 4C18.5 1.79 16.71 0 14.5 0C12.29 0 10.5 1.79 10.5 4C10.5 6.21 12.29 8 14.5 8ZM5.5 6V3H3.5V6H0.5V8H3.5V11H5.5V8H8.5V6H5.5ZM14.5 10C11.83 10 6.5 11.34 6.5 14V16H22.5V14C22.5 11.34 17.17 10 14.5 10Z"
+          fill="#9873FF" />
+      </svg>
+      Добавить клиента
+    </button>
+
+  </main>
+
+  <div class="modal-wrapper">
+
+    <div class="modal modal-change">
+
+      <button class="modal-btn-exit">
+        <svg class="modal-btn-exit__icon icon" width="29" height="29" viewbox="0 0 29 29" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <title>Закрыть</title>
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M22.2333 7.73333L21.2666 6.76666L14.4999 13.5334L7.73324 6.7667L6.76658 7.73336L13.5332 14.5L6.7666 21.2667L7.73327 22.2333L14.4999 15.4667L21.2666 22.2334L22.2332 21.2667L15.4666 14.5L22.2333 7.73333Z"
+            fill="#B0B0B0" />
+        </svg>
+      </button>
+
+      <h2 class="modal__heading">Изменить данные
+        <span class="modal__id">ID: 123458</span>
+      </h2>
+
+      <div class="modal__form">
+        <div class="input-wrapper">
+          <label class="modal__label" for="surname-change">Фамилия<span class="modal__star">*</span></label>
+          <input class="modal__input modal__input_surname" id="surname-change" type="text" name="surname" placeholder=""
+            required>
+        </div>
+        <div class="input-wrapper">
+          <label class="modal__label" for="name-change">Имя<span class="modal__star">*</span></label>
+          <input class="modal__input modal__input_name" id="name-change" type="text" name="name" placeholder=""
+            required>
+        </div>
+        <div class="input-wrapper">
+          <label class="modal__label" for="lastname-change">Отчество</label>
+          <input class="modal__input modal__input_patronymic" id="lastname-change" type="text" name="lastname"
+            placeholder="" required>
+        </div>
+      </div>
+
+      <div class="modal-contacts">
+        <ul class="modal-contacts__list">
+        </ul>
+        <button class="modal__button modal__button_add-contact">
+          <svg class="modal__button__image icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewbox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <title>Добавить контакт</title>
+            <circle cx="12" cy="12" r="10" stroke="#9873FF" fill="transparent" />
+            <line x1="12" y1="8" x2="12" y2="16" stroke="#9873FF" />
+            <line x1="8" y1="12" x2="16" y2="12" stroke="#9873FF" />
+          </svg>
+          Добавить контакт
+        </button>
+      </div>
+      <div class="modal__error-message"></div>
+      <button class="modal__button modal__button_ok">Сохранить</button>
+      <button class="modal__button modal__button_delete-client disabled">Удалить клиента</button>
+
+    </div>
+
+    <div class="modal modal-new">
+
+      <button class="modal-btn-exit">
+        <svg class="modal-btn-exit__icon icon" width="29" height="29" viewbox="0 0 29 29" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <title>Закрыть</title>
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M22.2333 7.73333L21.2666 6.76666L14.4999 13.5334L7.73324 6.7667L6.76658 7.73336L13.5332 14.5L6.7666 21.2667L7.73327 22.2333L14.4999 15.4667L21.2666 22.2334L22.2332 21.2667L15.4666 14.5L22.2333 7.73333Z"
+            fill="#B0B0B0" />
+        </svg>
+      </button>
+
+      <h2 class="modal__heading modal-new__heading">Новый клиент</h2>
+
+      <div class="modal__form">
+        <div class="input-wrapper">
+          <input class="modal__input modal__input_surname" id="surname-new" type="text" name="surname"
+            placeholder="Фамилия*" required>
+        </div>
+        <div class="input-wrapper">
+          <input class="modal__input modal__input_name" id="name-new" type="text" name="name" placeholder="Имя*"
+            required>
+        </div>
+        <div class="input-wrapper">
+          <input class="modal__input modal__input_patronymic" id="lastname-new" type="text" name="lastname"
+            placeholder="Отчество" required>
+        </div>
+      </div>
+
+      <div class="modal-contacts">
+        <ul class="modal-contacts__list">
+        </ul>
+        <button class="modal__button modal__button_add-contact">
+          <svg class="modal__button__image icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewbox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <title>Добавить контакт</title>
+            <circle cx="12" cy="12" r="10" stroke="#9873FF" fill="transparent" />
+            <line x1="12" y1="8" x2="12" y2="16" stroke="#9873FF" />
+            <line x1="8" y1="12" x2="16" y2="12" stroke="#9873FF" />
+          </svg>
+          Добавить контакт
+        </button>
+      </div>
+      <div class="modal__error-message"></div>
+      <button class="modal__button modal__button_ok">Сохранить</button>
+      <button class="modal__button modal__button_cancel disabled">Отмена</button>
+
+    </div>
+
+    <div class="modal modal-delete">
+
+      <button class="modal-btn-exit">
+        <svg class="modal-btn-exit__icon icon" width="29" height="29" viewbox="0 0 29 29" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <title>Закрыть</title>
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M22.2333 7.73333L21.2666 6.76666L14.4999 13.5334L7.73324 6.7667L6.76658 7.73336L13.5332 14.5L6.7666 21.2667L7.73327 22.2333L14.4999 15.4667L21.2666 22.2334L22.2332 21.2667L15.4666 14.5L22.2333 7.73333Z"
+            fill="#B0B0B0" />
+        </svg>
+      </button>
+
+      <h2 class="modal__heading modal-delete__heading">Удалить клиента</h2>
+
+      <p class="modal-delete__confirmation">Вы действительно хотите удалить данного клиента?</p>
+
+      <div class="modal__error-message"></div>
+
+      <button class="modal__button modal__button_ok">Удалить</button>
+      <button class="modal__button modal__button_cancel disabled">Отмена</button>
+
+    </div>
+
+    <div class="tooltip-delete-contact">
+      Удалить контакт
+    </div>
+
+  </div>
+
+  <div class="modal-loading">
+    <svg class="loading-image" width="100" height="100" viewbox="0 0 100 100" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_121_2401)">
+        <path
+          d="M14.0002 50.0005C14.0002 69.8825 30.1182 86.0005 50.0002 86.0005C69.8822 86.0005 86.0002 69.8825 86.0002 50.0005C86.0002 30.1185 69.8823 14.0005 50.0003 14.0005C45.3513 14.0005 40.9082 14.8815 36.8282 16.4865"
+          stroke="#9873FF" stroke-width="8" stroke-miterlimit="10" stroke-linecap="round" />
+      </g>
+    </svg>
+  </div>
+
+</body>
+
+</html>
